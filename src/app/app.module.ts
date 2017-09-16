@@ -2,11 +2,9 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {
-  MdTableModule,
-  MdTabsModule
-} from '@angular/material';
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdTableModule, MdTabsModule } from '@angular/material';
+import { DataTableModule } from "angular2-datatable";
 
 // used to create fake backend
 // import { fakeBackendProvider } from './_helpers/index';
@@ -30,6 +28,10 @@ import { LoginComponent } from './components/_login/index';
 import { RegisterComponent } from './components/_register/index';
 import { HeaderComponent } from './components/_header/_header.component';
 
+import { DashboardReportComponent } from './components/_dashboard-report/_dashboard-report.component';
+import { DataFilterPipe } from './components/_dashboard-report/_data-filter.pipe';
+
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -38,7 +40,8 @@ import { HeaderComponent } from './components/_header/_header.component';
         HttpModule,
         AppRoutingModule,
         MdTableModule,
-        MdTabsModule
+        MdTabsModule,
+        DataTableModule
     ],
     declarations: [
         AppComponent,
@@ -46,7 +49,9 @@ import { HeaderComponent } from './components/_header/_header.component';
         HomeComponent,
         LoginComponent,
         RegisterComponent,
-        HeaderComponent
+        HeaderComponent,
+        DashboardReportComponent,
+        DataFilterPipe
     ],
     providers: [{
           provide: APP_CONFIG,
