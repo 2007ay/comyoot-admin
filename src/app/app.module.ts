@@ -8,12 +8,17 @@ import { HttpModule } from '@angular/http';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
 
-import { AppComponent }  from './app.component';
 import { AppRoutingModule }        from './app.routing';
+
+import { APP_CONFIG, APP_DI_CONFIG } from "./app-config/app-config.constants";
+
+import { AlertService, AuthenticationService, UserService } from './_services/index';
+import { AppUtil} from "./utils/appUtil";
+
+import { AppComponent }  from './app.component';
 
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
-import { AlertService, AuthenticationService, UserService } from './_services/index';
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
@@ -32,11 +37,15 @@ import { RegisterComponent } from './register/index';
         LoginComponent,
         RegisterComponent
     ],
-    providers: [
+    providers: [{
+          provide: APP_CONFIG,
+          useValue: APP_DI_CONFIG
+        },
         AuthGuard,
         AlertService,
         AuthenticationService,
         UserService,
+        AppUtil,
 
         // providers used to create fake backend
         // fakeBackendProvider,
