@@ -1,3 +1,4 @@
+
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
@@ -5,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdTableModule, MdTabsModule } from '@angular/material';
 import { DataTableModule } from "angular2-datatable";
+import { NvD3Module } from 'angular2-nvd3'
 
 // used to create fake backend
 // import { fakeBackendProvider } from './_helpers/index';
@@ -41,6 +43,7 @@ import { DataFilterPipe } from './components/_dashboard-report/_data-filter.pipe
         AppRoutingModule,
         MdTableModule,
         MdTabsModule,
+        NvD3Module,
         DataTableModule
     ],
     declarations: [
@@ -53,7 +56,8 @@ import { DataFilterPipe } from './components/_dashboard-report/_data-filter.pipe
         DashboardReportComponent,
         DataFilterPipe
     ],
-    providers: [{
+    providers: [
+        {
           provide: APP_CONFIG,
           useValue: APP_DI_CONFIG
         },
