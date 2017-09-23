@@ -33,4 +33,7 @@ https://github.com/krispo/ng2-nvd3/blob/gh-pages/app/defs.ts
 https://github.com/hendrathings/angular2-nvd3
 https://github.com/krispo/ng2-nvd3  
 
-https://github.com/krispo/ng2-nvd3/blob/gh-pages/app/defs.ts
+for charts : https://github.com/krispo/ng2-nvd3/blob/gh-pages/app/defs.ts
+
+for Refs http://www.dundas.com/learning/samples
+https://samples.dundas.com/Dashboard/57a4b3e9-0942-41da-8254-a80fd0da24b4?e=false&vo=viewonly

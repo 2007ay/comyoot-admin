@@ -117,7 +117,7 @@ export class DashboardReportComponent implements OnInit {
         }
       }
     }
-    this.data2 = [{ key: "Total", y: 15 }, { key: "CMU", y: 5 }]
+    this.data2 = [{ key: "Male", y: 15 }, { key: "Female", y: 5 }]
   }
 
   public toInt(num: string) {

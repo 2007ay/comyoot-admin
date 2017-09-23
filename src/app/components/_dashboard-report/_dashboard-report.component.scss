@@ -1,33 +1,95 @@
-.dashboard {
-  .page-header {
-    margin: 0;
+@import "../../../assets/css/_color.scss";
+@import "../../../assets/css/_base.scss";
+
+@media only screen and (max-width:$screen-sm-max) {
+  
+  .report-header {
+    height: 50px;
+
+    h1 {
+      font-size: 25px;
+      text-align: center;
+      line-height: 2;
+    }
   }
 
   .user-table {
-    font-size: 12px;
-
     th {
-      a {
-        max-width: 250px;
-        text-align: center;
-        text-overflow: ellipsis;
-        word-wrap: break-word;
-      }
+      padding: 4px;
+      max-width: 45px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      text-align: left;
+      font-size: 10px;
     }
 
+    tr {
+      td {
+        text-align: left !important;
+        max-width: 20px !important;
+        font-size: 10px !important;
+        padding: 4px;
+      }
+    }
+  }
+}
+@media only screen and (min-width:$screen-sm) {
+  .no-float {
+    display: table-cell;
+    float: none;
+  }
+}
 
+.dashboard {
+  .report-header {
+    color: $tabHeader;
+    height: 100%;
+    text-align: center;
+    text-align: left;
+    background-color: $blue;
+    h1 {
+      font-family: $fixed-font-family;
+      line-height: 2;
+      text-align: center;
+    }
+  }
+
+  .border-left {
+    border-left: 2px solid $tabBorder;
+  }
+  .border-right {
+    border-right: 2px solid $tabBorder;
+  }
+  .border-bottom {
+    border-bottom: 2px solid $tabBorder;
+  }
+  .border-top {
+    border-top: 2px solid $tabBorder;
+  }
+
+  .user-table {
+    th {
+      text-align: center;
+
+      a {
+        max-width: 250px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
 
     tr {
       td {
         max-width: 250px;
         text-align: center;
         text-overflow: ellipsis;
-        word-wrap: break-word;
+        overflow: hidden;
+        overflow: hidden;
       }
     }
   }
 }
 
 h5 {
-  display:inline-block;
+  display: inline-block;
 }

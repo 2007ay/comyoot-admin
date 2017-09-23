@@ -1,4 +1,45 @@
 
+// Font weights
+$light: 100;
+$regular: 400;
+$bold: 600;
 
 $standart-pedding-left: 4%;
 $standart-pedding-right: 4%;
+
+// Base Font
+$base-font-weight: $regular;
+$base-font-size: 14px;
+$base-line-height: 1.4;
+
+// Fixed Font
+$fixed-font-family: "Roboto,'Noto Sans',Helvetica,'Arial Unicode MS',Arial,sans-serif";
+$fixed-font-Roboto: "Roboto";
+$fixed-font-size: 85%;
+$fixed-line-height: $base-line-height;
+
+// Headings
+$header-font-weight: $bold;
+
+$screen-xxs:                   312px;
+$screen-xxs-max:               375px;
+$screen-xs:                    412px;
+$screen-sm:                    768px;
+$screen-sm-max:                $screen-sm - 1;
+$screen-xs-max:                $screen-sm - 1;
+$screen-md:                    992px;
+$screen-md-plus:               $screen-md + 1;
+$screen-md-minus:              $screen-md - 1;
+$screen-mdd:				           1200px;
+$screen-mdd-plus:              $screen-mdd + 1;
+$screen-mdd-minus:             $screen-mdd - 1;
+$screen-lg:                    1440px;
+$screen-lg-plus:               $screen-lg + 1;
+
+$screen-865:                   865px;
+$screen-1024:                  1024px;
+$screen-1175:                  1175px;
+$screen-1280:                  1280px;
+$screen-1355:                  1355px;
+$screen-1366:                  1366px;
+$screen-1920:                  1920px;
