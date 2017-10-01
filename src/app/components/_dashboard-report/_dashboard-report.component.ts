@@ -6,6 +6,9 @@ import 'nvd3';
 
 declare let d3: any;
 
+import { UserSummary } from "../../_models/index";
+import { AlertService,  DashboardService } from '../../_services/index';
+
 @Component({
   selector: 'app-dashboard-report',
   templateUrl: './_dashboard-report.component.html',
@@ -13,29 +16,24 @@ declare let d3: any;
 })
 export class DashboardReportComponent implements OnInit {
 
-  private data;
+  private userSummary:UserSummary;
+  private dashboardStatus:UserSummary;
+
   private data2;
   private data3;
   private options;
   private options2;
   private multiBarChart;
   public filterQuery = "";
-  public rowsOnPage = 5;
-  public sortBy = "email";
+  public rowsOnPage = 10;
+  public sortBy = "emailId";
   public sortOrder = "asc";
   private tempPieChartData;
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private service:DashboardService, private alertService:AlertService) {
   }
 
   ngOnInit(): void {
-
-    this.http.get("assets/data/table.json")
-      .subscribe((data) => {
-        setTimeout(() => {
-          this.data = data.json();
-        }, 1000);
-      });
 
     this.http.get("assets/data/bar.json")
       .subscribe((data) => {
@@ -47,14 +45,14 @@ export class DashboardReportComponent implements OnInit {
     this.multiBarChart = {
       chart: {
         type: 'multiBarChart',
-        height: 450,
+        height: 465,
         margin: {
           top: 20,
           right: 20,
           bottom: 45,
           left: 45
         },
-        clipEdge: true,
+        clipEdge: false,
         //staggerLabels: true,
         duration: 500,
         stacked: false,
@@ -78,7 +76,7 @@ export class DashboardReportComponent implements OnInit {
     this.options = {
       chart: {
         type: 'pieChart',
-        height: 300,
+        height: 465,
         donut: true,
         x: function(d) { return d.key; },
         y: function(d) { return d.y; },
@@ -101,7 +99,7 @@ export class DashboardReportComponent implements OnInit {
     this.options2 = {
       chart: {
         type: 'pieChart',
-        height: 300,
+        height: 465,
         donut: true,
         x: function(d) { return d.key; },
         y: function(d) { return d.y; },
@@ -110,7 +108,6 @@ export class DashboardReportComponent implements OnInit {
         legend: {
           margin: {
             top: 10,
-            right: 140,
             bottom: 5,
             left: 0
           }
@@ -118,14 +115,32 @@ export class DashboardReportComponent implements OnInit {
       }
     }
     this.data2 = [{ key: "Male", y: 15 }, { key: "Female", y: 5 }]
+
+    this.getUserSummary();
+    this.getUserStats();
   }
 
   public toInt(num: string) {
     return +num;
   }
 
+  private getUserSummary():void {
+     this.service.getConnectionSummary().subscribe(data => {
+       this.userSummary = data.payload;
+     }, error => {
+       this.alertService.error(error);
+     })
+  }
+
+  private getUserStats():void {
+     this.service.getStaticsData().subscribe(data => {
+       this.dashboardStatus = data.payload;
+     }, error => {
+       this.alertService.error(error);
+     });
+  }
+
   public sortByWordLength = (a: any) => {
     return a.city.length;
   }
-
 }

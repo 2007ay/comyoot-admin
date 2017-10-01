@@ -4,12 +4,16 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { AppContants } from "../app-config/app-constant";
-import { AppUtil } from "../utils/appUtil"
+import { AppUtil } from "./app.util.service"
+import { AppBaseService } from "./app.base.service"
 
 
 @Injectable()
-export class AuthenticationService {
-  constructor(private http: Http, private appUtil:AppUtil) { }
+export class AuthenticationService  extends AppBaseService {
+
+  constructor(protected http: Http, protected appUtil:AppUtil) {
+    super(http, appUtil);
+  }
 
   login(username: string, password: string) {
 
@@ -19,7 +23,7 @@ export class AuthenticationService {
         let resp = response.json();
         if (resp && resp.success) {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
-          localStorage.setItem('currentUser', JSON.stringify(resp.payload.token));
+          localStorage.setItem('currentUser', JSON.stringify(resp.payload));
         } else {
           alert("invalid details, Try agian")
         }

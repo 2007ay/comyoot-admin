@@ -8,8 +8,10 @@ import { AppContants } from '../app-config/app-constant';
 
 @Injectable()
 export class AppUtil {
-  constructor( @Inject(APP_CONFIG) private config: IAppConfig) {
-  }
+  
+  constructor(
+    @Inject(APP_CONFIG)
+    private config: IAppConfig) { }
 
   public getApiUrl(url): string {
     return [environment.comyootApiHost, this.config.API_VERSION, url].join('/');

@@ -2,7 +2,6 @@
 @import "../../../assets/css/_base.scss";
 
 @media only screen and (max-width:$screen-sm-max) {
-  
   .report-header {
     height: 50px;
 
@@ -47,44 +46,57 @@
     text-align: center;
     text-align: left;
     background-color: $blue;
+
     h1 {
       font-family: $fixed-font-family;
+      font-family: "Roboto,'Noto Sans',Helvetica,'Arial Unicode MS',Arial,sans-serif";
+      margin: 0;
       line-height: 2;
       text-align: center;
+      font-size: 20px;
     }
   }
 
   .border-left {
     border-left: 2px solid $tabBorder;
   }
+
   .border-right {
     border-right: 2px solid $tabBorder;
   }
+
   .border-bottom {
     border-bottom: 2px solid $tabBorder;
   }
+
   .border-top {
     border-top: 2px solid $tabBorder;
   }
 
-  .user-table {
-    th {
-      text-align: center;
+  .panel-default {
+    
+    max-height: 450px;
+    overflow-y: auto;
 
-      a {
-        max-width: 250px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-      }
-    }
-
-    tr {
-      td {
-        max-width: 250px;
+    .user-table {
+      th {
         text-align: center;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        overflow: hidden;
+
+        a {
+          max-width: 250px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+
+      tr {
+        td {
+          max-width: 250px;
+          text-align: center;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          overflow: hidden;
+        }
       }
     }
   }
@@ -92,4 +104,8 @@
 
 h5 {
   display: inline-block;
+}
+
+.padding-0 {
+  padding: 0;
 }

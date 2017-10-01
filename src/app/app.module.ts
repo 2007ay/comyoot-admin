@@ -17,8 +17,9 @@ import { AppRoutingModule }        from './app.routing';
 
 import { APP_CONFIG, APP_DI_CONFIG } from "./app-config/app-config.constants";
 
-import { AlertService, AuthenticationService, UserService } from './_services/index';
-import { AppUtil} from "./utils/appUtil";
+// import { AppUtil} from "./utils/appUtil";
+
+import { AlertService, AuthenticationService, UserService, DashboardService, AppUtil } from './_services/index';
 
 import { AppComponent }  from './app.component';
 
@@ -63,10 +64,10 @@ import { DataFilterPipe } from './components/_dashboard-report/_data-filter.pipe
         },
         AuthGuard,
         AlertService,
+        AppUtil,
         AuthenticationService,
         UserService,
-        AppUtil,
-
+        DashboardService,
         // providers used to create fake backend
         // fakeBackendProvider,
         MockBackend,
