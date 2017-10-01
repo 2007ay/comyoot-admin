@@ -26,3 +26,16 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+For Refs:
+https://github.com/krispo/ng2-nvd3/blob/gh-pages/app/defs.ts
+https://github.com/hendrathings/angular2-nvd3
+https://github.com/krispo/ng2-nvd3  
+
+for charts : https://github.com/krispo/ng2-nvd3/blob/gh-pages/app/defs.ts
+
+for Refs http://www.dundas.com/learning/samples
+https://samples.dundas.com/Dashboard/57a4b3e9-0942-41da-8254-a80fd0da24b4?e=false&vo=viewonly
+
+http://krispo.github.io/angular-nvd3/#/multiBarHorizontalChart

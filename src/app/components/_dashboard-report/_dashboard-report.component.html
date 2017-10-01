@@ -1,0 +1,67 @@
+<div class="dashboard">
+  <div class="row">
+    <div class="col-md-6 col-lg-6 padding-0 border-left border-right border-bottom border-top">
+      <div class="report-header">
+        <h1>Connection Summary</h1>
+      </div>
+      <div class="panel panel-default">
+        <table class="table user-table" [mfData]="userSummary | dataFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+          <thead>
+            <tr>
+              <th>
+                <mfDefaultSorter by="firstName">Name</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="gradYear">Graduation Year</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="employer">Company</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="role">Role</mfDefaultSorter>
+              </th>
+            </tr>
+            <tr>
+              <th colspan="5">
+                <div class="input-group width100">
+                  <span class="input-group-addon" id="basic-addon1">@</span>
+                  <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1" [(ngModel)]="filterQuery">
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of mf.data">
+              <td>{{item.firstName}}</td>
+              <td>{{item.gradYear}}</td>
+              <td>{{item.employer}}</td>
+              <td>{{item.role}}</td>
+            </tr>
+          </tbody>
+          <tfoot class="hidden-xs">
+            <tr>
+              <td colspan="5">
+                <mfBootstrapPaginator [rowsOnPageSet]="[10,15]"></mfBootstrapPaginator>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-3 col-lg-3 padding-0 border-right border-bottom border-top ">
+      <div class="report-header">
+        <h1>Location: By City</h1>
+      </div>
+      <app-nvd3 class="full-height" [options]="multiBarChart" [data]="data3"></app-nvd3>
+    </div>
+    <div class="col-md-3 col-lg-3 padding-0 border-right border-bottom border-top w-100 p-3">
+      <div class="report-header">
+        <h1>Gender</h1>
+      </div>
+      <app-nvd3 class="full-height" [options]="options2" [data]="data2"></app-nvd3>
+    </div>
+  </div>
+  <div class="row" style="margin-top:25px">
+    <app-engagement></app-engagement>
+  </div>
+</div>
