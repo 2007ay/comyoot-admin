@@ -5,8 +5,7 @@
         <h1>Connection Summary</h1>
       </div>
       <div class="panel panel-default">
-        <table class="table user-table" [mfData]="userSummary | dataFilter : filterQuery"
-          #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+        <table class="table user-table" [mfData]="userSummary | dataFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
           <thead>
             <tr>
               <th>
@@ -61,5 +60,8 @@
       </div>
       <app-nvd3 class="full-height" [options]="options2" [data]="data2"></app-nvd3>
     </div>
+  </div>
+  <div class="row" style="margin-top:25px">
+    <app-engagement></app-engagement>
   </div>
 </div>

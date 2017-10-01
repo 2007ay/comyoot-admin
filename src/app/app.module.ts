@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdTableModule, MdTabsModule } from '@angular/material';
+import { MdTableModule, MdTabsModule, MdSelectModule } from '@angular/material';
 import { DataTableModule } from "angular2-datatable";
 import { NvD3Module } from 'angular2-nvd3'
 
@@ -33,6 +33,7 @@ import { HeaderComponent } from './components/_header/_header.component';
 
 import { DashboardReportComponent } from './components/_dashboard-report/_dashboard-report.component';
 import { DataFilterPipe } from './components/_dashboard-report/_data-filter.pipe';
+import { EngagementComponent } from './components/_dashboard-report/engagement/engagement.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { DataFilterPipe } from './components/_dashboard-report/_data-filter.pipe
         FormsModule,
         HttpModule,
         AppRoutingModule,
+        MdSelectModule,
         MdTableModule,
         MdTabsModule,
         NvD3Module,
@@ -55,7 +57,8 @@ import { DataFilterPipe } from './components/_dashboard-report/_data-filter.pipe
         RegisterComponent,
         HeaderComponent,
         DashboardReportComponent,
-        DataFilterPipe
+        DataFilterPipe,
+        EngagementComponent
     ],
     providers: [
         {

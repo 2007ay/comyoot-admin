@@ -8,7 +8,7 @@ import { AppContants } from '../app-config/app-constant';
 
 @Injectable()
 export class AppUtil {
-  
+
   constructor(
     @Inject(APP_CONFIG)
     private config: IAppConfig) { }
