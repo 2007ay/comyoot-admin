@@ -5,13 +5,17 @@ import { FormsModule }    from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdTableModule, MdTabsModule, MdSelectModule } from '@angular/material';
+
 import { DataTableModule } from "angular2-datatable";
+
 import { NvD3Module } from 'angular2-nvd3'
 
 // used to create fake backend
 // import { fakeBackendProvider } from './_helpers/index';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
+
+import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
 
 import { AppRoutingModule }        from './app.routing';
 
@@ -38,8 +42,6 @@ import { EngagementComponent } from './components/_dashboard-report/engagement/e
 
 @NgModule({
     imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
         FormsModule,
         HttpModule,
         AppRoutingModule,
@@ -47,7 +49,10 @@ import { EngagementComponent } from './components/_dashboard-report/engagement/e
         MdTableModule,
         MdTabsModule,
         NvD3Module,
-        DataTableModule
+        DataTableModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        AngularFontAwesomeModule
     ],
     declarations: [
         AppComponent,

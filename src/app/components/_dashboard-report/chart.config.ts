@@ -8,7 +8,7 @@ export const config = {
   multiBarHorizontalChart: {
     chart: {
       type: 'multiBarHorizontalChart',
-      height: 450,
+      height: 455,
       x: function(d){return d.label;},
       y: function(d){return d.value;},
       showControls: true,
@@ -25,7 +25,7 @@ export const config = {
   lineChart: {
     chart: {
       type: 'lineChart',
-      height: 450,
+      height: 455,
       margin: {
         top: 20,
         right: 20,
@@ -45,7 +45,7 @@ export const config = {
   multiBarChart: {
     chart: {
       type: 'multiBarChart',
-      height: 445,
+      height: 450,
       margin: {
         top: 20,
         right: 20,
@@ -75,7 +75,7 @@ export const config = {
   pieChart: {
     chart: {
       type: 'pieChart',
-      height: 445,
+      height: 450,
       donut: true,
       x: function(d) { return d.key; },
       y: function(d) { return d.y; },
