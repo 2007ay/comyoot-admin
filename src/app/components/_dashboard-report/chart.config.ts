@@ -37,7 +37,7 @@ export const config = {
       useInteractiveGuideline: true,
       xAxis: { axisLabel: 'Time (ms)' },
       yAxis: {
-        axisLabel: 'Voltage (v)',
+        axisLabel: 'Users',
         axisLabelDistance: -10
       }
     }
@@ -53,7 +53,6 @@ export const config = {
         left: 45
       },
       clipEdge: false,
-      //staggerLabels: true,
       duration: 500,
       stacked: false,
       xAxis: {

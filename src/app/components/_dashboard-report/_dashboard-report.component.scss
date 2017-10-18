@@ -26,7 +26,7 @@
         text-align: left !important;
         max-width: 20px !important;
         font-size: 10px !important;
-        padding: 4px;
+        padding: 4px !important;
       }
     }
   }
@@ -65,7 +65,7 @@
   }
 
   .status {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .away {
@@ -92,8 +92,14 @@
   .panel-default {
     max-height: 450px;
     overflow-y: auto;
+    overflow-x: hidden;
 
     .user-table {
+
+      .form-group {
+        margin-bottom: 5px;
+      }
+      
       th {
         text-align: center;
 
@@ -107,6 +113,7 @@
       tr {
         td {
           max-width: 250px;
+          padding: 5px;
           text-align: center;
           text-overflow: ellipsis;
           overflow: hidden;

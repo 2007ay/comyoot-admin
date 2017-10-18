@@ -12,7 +12,7 @@ import { AlertService, AuthenticationService } from '../../_services/index';
 
 export class LoginComponent implements OnInit {
 
-  private model: any = {};
+  public model: any = {};
   private loading = false;
 
   constructor(

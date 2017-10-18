@@ -15,11 +15,11 @@ import { AlertService,  DashboardService } from '../../../_services/index';
 export class EngagementComponent implements OnInit {
 
   private dashboardStatus:any = {};
-  private selectedValue: string = "gradYear";
-  private selectedChartConfig:any;
-  private selectedChartData:any;
+  public selectedValue: string = "gradYear";
+  public selectedChartConfig:any;
+  public selectedChartData:any;
 
-  private chartTypes = [
+  public chartTypes = [
      {value: 'employer', viewValue: 'Employed By'},
      {value: 'gradYear', viewValue: 'Graduation Year'}
   ];
@@ -34,7 +34,7 @@ export class EngagementComponent implements OnInit {
     this.getUserStats();
   }
 
-  private onChartTypeChange():void {
+  public onChartTypeChange($event:any):void {
 
     let values = [];
     if(this.selectedValue == "gradYear") {
@@ -67,7 +67,7 @@ export class EngagementComponent implements OnInit {
   private getUserStats():void {
      this.service.getStaticsData().subscribe(data => {
        this.transformData(data.payload);
-       this.onChartTypeChange();
+       this.onChartTypeChange({});
      }, error => {
        this.alertService.error(error);
      });

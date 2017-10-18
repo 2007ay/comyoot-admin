@@ -1,3 +1,11 @@
+@import "../../../../assets/css/_color.scss";
+@import "../../../../assets/css/_base.scss";
+
 .engagement-chart {
-  padding:20px;
+  padding: 20px;
+  border: 2px solid $tabBorder;
+}
+
+.drop-down {
+  width: 150px;
 }

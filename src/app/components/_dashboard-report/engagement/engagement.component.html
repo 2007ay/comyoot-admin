@@ -1,13 +1,13 @@
-<div class="col-md-12 col-lg-12">
+<!-- <div class="col-md-12 col-lg-12"> -->
   <div class="report-header">
     <h1>Connection Summary</h1>
   </div>
   <div class="engagement-chart">
-    <md-select placeholder="Display By" [(ngModel)]="selectedValue" name="chartType" (ngModelChange)="onChartTypeChange($event)">
-      <md-option *ngFor="let chartType of chartTypes" [value]="chartType.value">
+    <mat-select class="drop-down" placeholder="Display By" [(ngModel)]="selectedValue" name="chartType" (ngModelChange)="onChartTypeChange($event)">
+      <mat-option *ngFor="let chartType of chartTypes" [value]="chartType.value">
         {{chartType.viewValue}}
-      </md-option>
-    </md-select>
+      </mat-option>
+    </mat-select>
     <app-nvd3 class="full-height" [options]="selectedChartConfig" [data]="selectedChartData"></app-nvd3>
   </div>
-</div>
+<!-- </div> -->

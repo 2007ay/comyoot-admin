@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdTableModule, MdTabsModule, MdSelectModule } from '@angular/material';
+import { MatTableModule, MatTabsModule, MatSelectModule } from '@angular/material';
 
 import { DataTableModule } from "angular2-datatable";
 
@@ -20,8 +20,6 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awes
 import { AppRoutingModule }        from './app.routing';
 
 import { APP_CONFIG, APP_DI_CONFIG } from "./app-config/app-config.constants";
-
-// import { AppUtil} from "./utils/appUtil";
 
 import { AlertService, AuthenticationService, UserService, DashboardService, AppUtil } from './_services/index';
 
@@ -45,9 +43,9 @@ import { EngagementComponent } from './components/_dashboard-report/engagement/e
         FormsModule,
         HttpModule,
         AppRoutingModule,
-        MdSelectModule,
-        MdTableModule,
-        MdTabsModule,
+        MatSelectModule,
+        MatTableModule,
+        MatTabsModule,
         NvD3Module,
         DataTableModule,
         BrowserModule,

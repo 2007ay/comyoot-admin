@@ -18,12 +18,12 @@ import { AlertService,  DashboardService } from '../../_services/index';
 })
 export class DashboardReportComponent implements OnInit {
 
-  private userSummary:UserSummary;
-  private data2;
-  private data3;
+  public userSummary:UserSummary;
+  public data2;
+  public data3;
   private options;
-  private options2;
-  private multiBarChart;
+  public options2;
+  public multiBarChart;
   public filterQuery = "";
   public rowsOnPage = 10;
   public sortBy = "emailId";
@@ -36,11 +36,11 @@ export class DashboardReportComponent implements OnInit {
   ngOnInit(): void {
 
     this.http.get("assets/data/bar.json")
-    .subscribe((data) => {
-      setTimeout(() => {
-        this.data3 = data.json();
-      }, 1000);
-    });
+      .subscribe((data) => {
+        setTimeout(() => {
+          this.data3 = data.json();
+        }, 1000);
+      });
 
     this.multiBarChart = config.multiBarChart;
 

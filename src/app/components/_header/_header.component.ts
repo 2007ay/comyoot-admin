@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  private fullImagePath = "./assets/img/comyoot-log.png";
+  public fullImagePath = "./assets/img/comyoot-log.png";
   constructor() { }
 
   ngOnInit() {

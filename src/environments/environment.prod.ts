@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  comyootApiHost:"http://0.0.0.0:10020"
+  comyootApiHost:"http://test.api.comyoot.com"
 };
