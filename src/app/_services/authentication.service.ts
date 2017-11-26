@@ -9,9 +9,9 @@ import { AppBaseService } from "./app.base.service"
 
 
 @Injectable()
-export class AuthenticationService  extends AppBaseService {
+export class AuthenticationService extends AppBaseService {
 
-  constructor(protected http: Http, protected appUtil:AppUtil) {
+  constructor(protected http: Http, protected appUtil: AppUtil) {
     super(http, appUtil);
   }
 
@@ -20,12 +20,12 @@ export class AuthenticationService  extends AppBaseService {
     return this.http.post(this.appUtil.getApiUrl(AppContants.loginApiEndPoint), { emailId: username, password: password })
       .map((response: Response) => {
         // login successful if there's a jwt token in the response
-        let resp = response.json();
+        const resp = response.json();
         if (resp && resp.success) {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('currentUser', JSON.stringify(resp.payload));
         } else {
-          alert("invalid details, Try agian")
+          alert('invalid details, Try agian');
         }
       });
   }

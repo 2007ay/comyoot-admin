@@ -1,29 +1,70 @@
 
-import { NgModule }      from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule, MatTabsModule, MatSelectModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatStepperModule
+} from '@angular/material';
 
-import { DataTableModule } from "angular2-datatable";
+import { DataTableModule } from 'angular2-datatable';
 
-import { NvD3Module } from 'angular2-nvd3'
+import { NvD3Module } from 'angular2-nvd3';
 
 // used to create fake backend
-// import { fakeBackendProvider } from './_helpers/index';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
 
-import { AppRoutingModule }        from './app.routing';
+import { AppRoutingModule } from './app.routing';
 
-import { APP_CONFIG, APP_DI_CONFIG } from "./app-config/app-config.constants";
+import { APP_CONFIG, APP_DI_CONFIG } from './app-config/app-config.constants';
 
-import { AlertService, AuthenticationService, UserService, DashboardService, AppUtil } from './_services/index';
+import {
+    AlertService,
+    AuthenticationService,
+    UserService,
+    DashboardService,
+    AppUtil,
+    SubscriptionService
+} from './_services/index';
 
-import { AppComponent }  from './app.component';
+import { AppComponent } from './app.component';
+
+import { HomeLayoutComponent } from './components/layouts/home-layout.component';
+import { LoginLayoutComponent } from './components/layouts/login-layout.component';
 
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
@@ -32,20 +73,48 @@ import { HomeComponent } from './components/_home/index';
 import { LoginComponent } from './components/_login/index';
 import { RegisterComponent } from './components/_register/index';
 import { HeaderComponent } from './components/_header/_header.component';
+import { SubscriptionComponent } from './components/_subscription/index';
 
 import { DashboardReportComponent } from './components/_dashboard-report/_dashboard-report.component';
 import { DataFilterPipe } from './components/_dashboard-report/_data-filter.pipe';
 import { EngagementComponent } from './components/_dashboard-report/engagement/engagement.component';
-
 
 @NgModule({
     imports: [
         FormsModule,
         HttpModule,
         AppRoutingModule,
+        MatAutocompleteModule,
+        MatButtonModule,
+        MatButtonToggleModule,
+        MatCardModule,
+        MatCheckboxModule,
+        MatChipsModule,
+        MatStepperModule,
+        MatDatepickerModule,
+        MatDialogModule,
+        MatExpansionModule,
+        MatGridListModule,
+        MatIconModule,
+        MatInputModule,
+        MatListModule,
+        MatMenuModule,
+        MatNativeDateModule,
+        MatPaginatorModule,
+        MatProgressBarModule,
+        MatProgressSpinnerModule,
+        MatRadioModule,
+        MatRippleModule,
         MatSelectModule,
+        MatSidenavModule,
+        MatSliderModule,
+        MatSlideToggleModule,
+        MatSnackBarModule,
+        MatSortModule,
         MatTableModule,
         MatTabsModule,
+        MatToolbarModule,
+        MatTooltipModule,
         NvD3Module,
         DataTableModule,
         BrowserModule,
@@ -54,6 +123,8 @@ import { EngagementComponent } from './components/_dashboard-report/engagement/e
     ],
     declarations: [
         AppComponent,
+        HomeLayoutComponent,
+        LoginLayoutComponent,
         AlertComponent,
         HomeComponent,
         LoginComponent,
@@ -61,12 +132,13 @@ import { EngagementComponent } from './components/_dashboard-report/engagement/e
         HeaderComponent,
         DashboardReportComponent,
         DataFilterPipe,
-        EngagementComponent
+        EngagementComponent,
+        SubscriptionComponent
     ],
     providers: [
         {
-          provide: APP_CONFIG,
-          useValue: APP_DI_CONFIG
+            provide: APP_CONFIG,
+            useValue: APP_DI_CONFIG
         },
         AuthGuard,
         AlertService,
@@ -74,9 +146,8 @@ import { EngagementComponent } from './components/_dashboard-report/engagement/e
         AuthenticationService,
         UserService,
         DashboardService,
-        // providers used to create fake backend
-        // fakeBackendProvider,
         MockBackend,
+        SubscriptionService,
         BaseRequestOptions
     ],
     bootstrap: [AppComponent]

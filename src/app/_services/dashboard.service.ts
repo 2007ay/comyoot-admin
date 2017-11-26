@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Http } from "@angular/http";
+import { Http } from '@angular/http';
 
-import { AppContants } from "../app-config/app-constant";
-import { AppBaseService } from "./app.base.service"
-import { AppUtil } from "./app.util.service"
+import { AppContants } from '../app-config/app-constant';
+import { AppBaseService } from './app.base.service';
+import { AppUtil } from './app.util.service';
 
 @Injectable()
 export class DashboardService extends AppBaseService {

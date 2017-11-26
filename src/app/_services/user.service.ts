@@ -2,15 +2,15 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 import { User } from '../_models/index';
-import { AppContants } from "../app-config/app-constant";
-import { AppUtil } from "./app.util.service"
-import { AppBaseService } from "./app.base.service";
+import { AppContants } from '../app-config/app-constant';
+import { AppUtil } from './app.util.service';
+import { AppBaseService } from './app.base.service';
 
 @Injectable()
-export class UserService  extends AppBaseService {
+export class UserService extends AppBaseService {
 
-  constructor(protected http: Http, protected appUtil:AppUtil) {
-    super(http, appUtil)
+  constructor(protected http: Http, protected appUtil: AppUtil) {
+    super(http, appUtil);
   }
 
   getAll() {
@@ -22,7 +22,8 @@ export class UserService  extends AppBaseService {
   }
 
   create(user: User) {
-    return this.http.post(this.appUtil.getApiUrl(AppContants.registerUserApiEndPoint), user, this.jwt(null)).map((response: Response) => response.json());
+    return this.http.post(this.appUtil.getApiUrl(AppContants.registerUserApiEndPoint), user, this.jwt(null))
+      .map((response: Response) => response.json());
   }
 
   update(user: User) {

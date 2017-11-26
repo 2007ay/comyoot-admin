@@ -1,0 +1,42 @@
+<div class="col-md-6 col-md-offset-3">
+  <h2>Register</h2>
+  <form name="form" (ngSubmit)="f.form.valid && sendSubscriptions()" #f="ngForm" novalidate>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !subject.valid }">
+      <label for="subject">Subject</label>
+      <input type="text" class="form-control" name="subject" [(ngModel)]="model.subject" #subject="ngModel" required />
+      <div *ngIf="f.submitted && !subject.valid" class="help-block">Subject is required</div>
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !from.valid }">
+      <label for="from">From</label>
+      <input type="text" class="form-control" name="from" [(ngModel)]="model.from" #from="ngModel" required />
+      <div *ngIf="f.submitted && !from.valid" class="help-block">From is required</div>
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !toAll.valid }">
+      <input type="checkbox" name="toAll" checked="model.toAll" [(ngModel)]="model.toAll" #toAll="ngModel">
+      <label for="toAll">Send to All</label>
+    </div>
+
+    <div *ngIf="!model.toAll" class="form-group" [ngClass]="{ 'has-error': f.submitted && !emailId.valid }">
+      <label for="emailId">Emails</label>
+      <input type="email" class="form-control" name="emailId" [(ngModel)]="model.emails" #emailId="ngModel" required placeholder="Please enter comma(') emails'"
+      />
+      <div *ngIf="f.submitted && !emailId.valid" class="help-block">Email is required</div>
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+      <label for="password">message</label>
+      <textarea mdbActive type="text" id="form76" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel"
+        cols="200" required placeholder="Please provide email text in HTML format"></textarea>
+      <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+    </div>
+
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary">Register</button>
+      <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+      />
+    </div>
+  </form>
+</div>

@@ -1,6 +1,3 @@
-
-//http://g7zisb.axshare.com
-
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -9,7 +6,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: [
     './app.component.scss',
-    "../assets/css/_.icons.scss"
+    '../assets/css/_.icons.scss'
   ],
   encapsulation: ViewEncapsulation.None
 })

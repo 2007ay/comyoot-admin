@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthenticationService } from '../../_services/index';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  public fullImagePath = "./assets/img/comyoot-log.png";
-  constructor() { }
+  public fullImagePath = './assets/img/comyoot-log.png';
+  public subscriptionPermission = false;
+  public userPermissions;
+  constructor(private router: Router, private authenticationService: AuthenticationService) {
+    
+    this.userPermissions = this.authenticationService.getUserPermissions();
+    this.subscriptionPermission = this.userPermissions.subscriptionPermission;
+  }
 
   ngOnInit() {
+    // console.log(this.authenticationService.getUserPermissions());
+  }
+
+  OnMenuClick(route) {
+    this.router.navigate(['/' + route]);
   }
 
 }

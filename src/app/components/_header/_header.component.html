@@ -1,7 +1,22 @@
 <div class="app-header">
   <div class="header">
-    <img [src]="fullImagePath" />
+    <img [src]="fullImagePath" [routerLink]="['/']" />
     <h1>Customer Admin Console</h1>
-    <p class="logout"><a [routerLink]="['/login']">Logout</a></p>
+    <div class="logout">
+      <div *ngIf="subscriptionPermission" class="app-setting">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="OnMenuClick('subscription')">
+            <mat-icon>notifications</mat-icon>
+            <span>subscription</span>
+          </button>
+        </mat-menu>
+      </div>
+      <p style="display: inline-block;">
+        <a [routerLink]="['/login']">Logout</a>
+      </p>
+    </div>
   </div>
 </div>
