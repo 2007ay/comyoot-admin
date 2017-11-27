@@ -8,19 +8,15 @@ import { AuthenticationService } from '../../_services/index';
   templateUrl: './_header.component.html',
   styleUrls: ['./_header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   public fullImagePath = './assets/img/comyoot-log.png';
   public subscriptionPermission = false;
   public userPermissions;
   constructor(private router: Router, private authenticationService: AuthenticationService) {
-    
+
     this.userPermissions = this.authenticationService.getUserPermissions();
     this.subscriptionPermission = this.userPermissions.subscriptionPermission;
-  }
-
-  ngOnInit() {
-    // console.log(this.authenticationService.getUserPermissions());
   }
 
   OnMenuClick(route) {
