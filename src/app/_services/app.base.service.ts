@@ -13,7 +13,7 @@ export class AppBaseService {
     let userPermissions = {};
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (currentUser && currentUser.token) {
-      userPermissions = currentUser.userPermissions;
+      userPermissions = currentUser.userPermissions || {};
     }
     return userPermissions;
   }
