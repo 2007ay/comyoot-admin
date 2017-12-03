@@ -8,13 +8,15 @@ import { AlertService, SubscriptionService } from '../../_services/index';
 })
 export class SubscriptionComponent implements OnInit {
 
-  private model: any = {
+  public model: any = {
     message: '',
     subject: 'News from ComYoot team',
     from: 'info@comyoot.co',
     toAll: true,
     emails: ''
   };
+
+  public loading: Boolean = false;
 
   constructor(
     private subscriptionService: SubscriptionService,
