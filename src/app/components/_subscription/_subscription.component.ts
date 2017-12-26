@@ -29,6 +29,8 @@ export class SubscriptionComponent implements OnInit {
     this.subscriptionService.sendSubscription(this.model)
       .subscribe(
       data => {
+        this.model.message = "";
+        this.model.emails = "";
         this.alertService.success('Registration successful', true);
       },
       error => {
