@@ -12,9 +12,11 @@ export class SubscriptionComponent implements OnInit {
     message: '',
     subject: 'News from ComYoot team',
     from: 'info@comyoot.co',
-    toAll: true,
+    toAll: false,
     emails: ''
   };
+
+  public enablePreview = false;
 
   public loading: Boolean = false;
 
@@ -23,6 +25,10 @@ export class SubscriptionComponent implements OnInit {
     private alertService: AlertService) { }
 
   ngOnInit() {
+  }
+
+  preview() {
+    this.enablePreview = !this.enablePreview;
   }
 
   sendSubscriptions() {
