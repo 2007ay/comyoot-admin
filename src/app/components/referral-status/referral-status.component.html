@@ -1,0 +1,59 @@
+<div>
+  <div class="report-header">
+    <h1>Refferal Summary</h1>
+  </div>
+  <div class="panel panel-default border">
+    <table class="table user-table" [mfData]="referralSummary | referralFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage"
+      [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+      <thead>
+        <tr>
+          <th style="width: 20%">
+            <mfDefaultSorter by="userName">Name</mfDefaultSorter>
+          </th>
+          <th style="width: 5%">
+            <mfDefaultSorter by="userEmailId">User Email</mfDefaultSorter>
+          </th>
+          <th style="width: 20%">
+            <mfDefaultSorter by="mentorName">Mentor Name</mfDefaultSorter>
+          </th>
+          <th style="width: 20%">
+            <mfDefaultSorter by="mentorEmailId">Mentor Email</mfDefaultSorter>
+          </th>
+          <th style="width: 5%">
+            <mfDefaultSorter by="dateOfAcceptance">date Of Acceptance</mfDefaultSorter>
+          </th>
+        </tr>
+        <tr>
+          <th colspan="6">
+            <div class="input-group width100">
+              <form action="" class="search-form">
+                <div class="form-group has-feedback">
+                  <label for="search" class="sr-only">Search</label>
+                  <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1" [(ngModel)]="filterQuery" name="search"
+                    id="search" placeholder="search">
+                  <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                </div>
+              </form>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of mf.data">
+          <td>{{item.userName}}</td>
+          <td>{{item.userEmailId}}</td>
+          <td>{{item.mentorName}}</td>
+          <td>{{item.mentorEmailId}}</td>
+          <td>{{item.dateOfAcceptance}}</td>
+        </tr>
+      </tbody>
+      <tfoot class="hidden-xs">
+        <tr>
+          <td colspan="5">
+            <mfBootstrapPaginator [rowsOnPageSet]="[10,15]"></mfBootstrapPaginator>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

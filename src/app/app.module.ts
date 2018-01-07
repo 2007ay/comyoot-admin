@@ -77,7 +77,10 @@ import { SubscriptionComponent } from './components/_subscription/index';
 
 import { DashboardReportComponent } from './components/_dashboard-report/_dashboard-report.component';
 import { DataFilterPipe } from './components/_dashboard-report/_data-filter.pipe';
+
 import { EngagementComponent } from './components/_dashboard-report/engagement/engagement.component';
+import { ReferralStatusComponent } from './components/referral-status/referral-status.component';
+import { ReferralFilterPipe } from './components/referral-status/_referral-filter.pipe';
 
 @NgModule({
     imports: [
@@ -132,8 +135,10 @@ import { EngagementComponent } from './components/_dashboard-report/engagement/e
         HeaderComponent,
         DashboardReportComponent,
         DataFilterPipe,
+        ReferralFilterPipe,
         EngagementComponent,
-        SubscriptionComponent
+        SubscriptionComponent,
+        ReferralStatusComponent
     ],
     providers: [
         {

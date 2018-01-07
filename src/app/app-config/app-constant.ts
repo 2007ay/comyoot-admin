@@ -4,4 +4,5 @@ export class AppContants {
   public static getStaticsApiEndPoint = 'dashboard/get-statics-data';
   public static userSummaryApiEndPoint = 'dashboard/get-connection-summary';
   public static sendSubscriptoin = 'reports/send-subscribe-newsletter';
+  public static getRefferalStatusApiEndPoint = 'referral/get-referral-list';
 }

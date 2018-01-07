@@ -36,7 +36,7 @@ export class EngagementComponent implements OnInit {
 
   public onChartTypeChange($event: any): void {
 
-    let values = [];
+    const values = [];
     if (this.selectedValue === 'gradYear') {
       _.each(this.dashboardStatus[this.selectedValue], function (value: any, key: any) {
         if (key && parseInt(key, 10)) {
@@ -44,16 +44,16 @@ export class EngagementComponent implements OnInit {
         }
       })
       this.selectedChartConfig = config.lineChart;
-    } else if (this.selectedValue == "employer") {
+    } else if (this.selectedValue === 'employer') {
       _.each(this.dashboardStatus[this.selectedValue], function (value: any, key: any) {
         if (key) {
-          values.push({ value: value.length, label: key })
+          values.push({ value: value.length, label: key });
         }
       });
       this.selectedChartConfig = config.multiBarHorizontalChart;
     }
 
-    let chartData: any = { values: values, key: this.selectedValue }
+    const chartData: any = { values: values, key: this.selectedValue }
     this.selectedChartData = [chartData];
   }
 

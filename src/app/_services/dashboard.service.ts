@@ -20,4 +20,8 @@ export class DashboardService extends AppBaseService {
     return this.httpGetReq(AppContants.getStaticsApiEndPoint, null);
   }
 
+  getReferralStatus() {
+    return this.httpGetReq(AppContants.getRefferalStatusApiEndPoint, null);
+  }
+
 }
