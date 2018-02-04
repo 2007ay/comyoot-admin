@@ -14,6 +14,7 @@ export class UserOrgComponent implements OnInit {
   public filterUserList: any;
   public filterQuery;
   public rowsOnPage = 100;
+  public totalRecords = 0;
   public sortBy = 'firstLoginTime';
   public selectedOrgnization: string;
   public sortOrder = 'asc';
@@ -49,6 +50,7 @@ export class UserOrgComponent implements OnInit {
   fetch(selectedValue) {
     this.service.getUserListByParams({ organization_name: selectedValue }).subscribe(data => {
       this.filterUserList = data.payload.data;
+      this.totalRecords = data.payload.totalCount;
     }, error => {
       this.alertService.error(error);
     });

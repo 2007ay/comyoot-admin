@@ -13,6 +13,7 @@ export class ReferralStatusComponent implements OnInit {
   public referralSummary: any;
   public filterQuery;
   public rowsOnPage = 10;
+  public totalRecords = 0;
   public sortBy = 'dateOfAcceptance';
   public sortOrder = 'asc';
 
@@ -26,6 +27,7 @@ export class ReferralStatusComponent implements OnInit {
   private getReferralStatus(): void {
     this.service.getReferralStatus().subscribe(data => {
       this.referralSummary = data.payload.data;
+      this.totalRecords = data.payload.totalCount;
     }, error => {
       this.alertService.error(error);
     });
