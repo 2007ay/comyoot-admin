@@ -24,4 +24,13 @@ export class DashboardService extends AppBaseService {
     return this.httpGetReq(AppContants.getRefferalStatusApiEndPoint, null);
   }
 
+
+  getOrganizationList() {
+    return this.httpGetReq(AppContants.getOrgnizationList, null);
+  }
+
+  getUserListByParams(query) {
+    return this.httpGetReq(AppContants.getUserByOrgnization, query);
+  }
+
 }

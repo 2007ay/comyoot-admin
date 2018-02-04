@@ -1,23 +1,29 @@
 <div>
+
+  <mat-form-field>
+    <mat-select (ngModelChange)="onSelectChange($event)" [(ngModel)]="selectedOrgnization">
+      <mat-option *ngFor="let org of orgnizationList" [value]="org.value">
+        {{ org.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
   <div class="panel panel-default border">
-    <table class="table user-table" [mfData]="referralSummary | referralFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage"
+    <table class="table user-table" [mfData]="filterUserList | dataFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage"
       [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
       <thead>
         <tr>
           <th style="width: 20%">
-            <mfDefaultSorter by="userName">Name</mfDefaultSorter>
-          </th>
-          <th style="width: 5%">
-            <mfDefaultSorter by="userEmailId">User Email</mfDefaultSorter>
+            <mfDefaultSorter by="firstName">Name</mfDefaultSorter>
           </th>
           <th style="width: 20%">
-            <mfDefaultSorter by="mentorName">Mentor Name</mfDefaultSorter>
-          </th>
-          <th style="width: 20%">
-            <mfDefaultSorter by="mentorEmailId">Mentor Email</mfDefaultSorter>
+            <mfDefaultSorter by="top_organization">Employer</mfDefaultSorter>
           </th>
           <th style="width: 5%">
-            <mfDefaultSorter by="dateOfAcceptance">date Of Acceptance</mfDefaultSorter>
+            <mfDefaultSorter by="emailId">User Email</mfDefaultSorter>
+          </th>
+          <th style="width: 5%">
+            <mfDefaultSorter by="firstLoginTime">date Of Login</mfDefaultSorter>
           </th>
         </tr>
         <tr>
@@ -37,17 +43,16 @@
       </thead>
       <tbody>
         <tr *ngFor="let item of mf.data">
-          <td>{{item.userName}}</td>
-          <td>{{item.userEmailId}}</td>
-          <td>{{item.mentorName}}</td>
-          <td>{{item.mentorEmailId}}</td>
-          <td>{{item.dateOfAcceptance}}</td>
+          <td>{{item.firstName}}</td>
+          <td>{{item.top_organization}}</td>
+          <td>{{item.emailId}}</td>
+          <td>{{item.firstLoginTime | date: 'dd/MM/yyyy'}}</td>
         </tr>
       </tbody>
       <tfoot class="hidden-xs">
         <tr>
           <td colspan="5">
-            <mfBootstrapPaginator [rowsOnPageSet]="[10,15]"></mfBootstrapPaginator>
+            <mfBootstrapPaginator [rowsOnPageSet]="[10,100]"></mfBootstrapPaginator>
           </td>
         </tr>
       </tfoot>

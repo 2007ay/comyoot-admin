@@ -5,4 +5,6 @@ export class AppContants {
   public static userSummaryApiEndPoint = 'dashboard/get-connection-summary';
   public static sendSubscriptoin = 'reports/send-subscribe-newsletter';
   public static getRefferalStatusApiEndPoint = 'referral/get-referral-list';
+  public static getUserByOrgnization = 'dashboard/get-user-list-by-org';
+  public static getOrgnizationList = 'dashboard/get-uniq-orgnization-list';
 }

@@ -58,7 +58,7 @@ export class EngagementComponent implements OnInit {
   }
 
   private transformData(payload): void {
-    let _self = this;
+    const _self = this;
     this.chartTypes.forEach(function (chartType: any, i) {
       _self.dashboardStatus[chartType.value] = _.groupBy(payload, chartType.value);
     });

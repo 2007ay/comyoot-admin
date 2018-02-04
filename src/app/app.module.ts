@@ -81,6 +81,7 @@ import { DataFilterPipe } from './components/_dashboard-report/_data-filter.pipe
 import { EngagementComponent } from './components/_dashboard-report/engagement/engagement.component';
 import { ReferralStatusComponent } from './components/referral-status/referral-status.component';
 import { ReferralFilterPipe } from './components/referral-status/_referral-filter.pipe';
+import { UserOrgComponent } from './components/user-org/user-org.component';
 
 @NgModule({
     imports: [
@@ -138,7 +139,8 @@ import { ReferralFilterPipe } from './components/referral-status/_referral-filte
         ReferralFilterPipe,
         EngagementComponent,
         SubscriptionComponent,
-        ReferralStatusComponent
+        ReferralStatusComponent,
+        UserOrgComponent
     ],
     providers: [
         {

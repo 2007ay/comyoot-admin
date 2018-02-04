@@ -23,7 +23,7 @@
                   <mfDefaultSorter by="employer">Company</mfDefaultSorter>
                 </th>
                 <th style="width: 5%">
-                  <mfDefaultSorter by="employer">Status</mfDefaultSorter>
+                  <mfDefaultSorter by="userStatus">Status</mfDefaultSorter>
                 </th>
                 <th style="width: 15%">
                   <mfDefaultSorter by="role">Role</mfDefaultSorter>
@@ -84,7 +84,14 @@
     </div>
 
     <div class="row" style="margin-top:25px">
-      <app-referral-status></app-referral-status>
+      <mat-tab-group>
+        <mat-tab label="Refferal">
+          <app-referral-status></app-referral-status>
+        </mat-tab>
+        <mat-tab label="Users">
+          <app-user-org></app-user-org>
+        </mat-tab>
+      </mat-tab-group>
     </div>
 
   </div>
